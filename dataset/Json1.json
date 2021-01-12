@@ -1,0 +1,65 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sampletwo.json",
+				"container": "blobfive"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"limit": {
+					"type": "integer"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"totalCount": {
+					"type": "integer"
+				},
+				"orderBy": {
+					"type": "string"
+				},
+				"persons": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"createdAt": {
+								"type": "string"
+							},
+							"modifiedAt": {
+								"type": "string"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"country": {
+								"type": "string"
+							},
+							"gender": {
+								"type": "string"
+							},
+							"tags": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
