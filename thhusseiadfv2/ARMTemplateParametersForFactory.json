@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "thhusseiadfv2"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStore_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStore1_servicePrincipalKey": {
+			"value": ""
+		},
+		"ODataBusinessCentral_password": {
+			"value": ""
+		},
+		"linkedService1_clusterPassword": {
+			"value": ""
+		},
+		"linkedService1_clusterSshPassword": {
+			"value": ""
+		},
+		"linkedService1_servicePrincipalKey": {
+			"value": ""
+		},
+		"AzureDataLakeStore_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://thhusseiadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore_properties_typeProperties_servicePrincipalId": {
+			"value": "d5d0bae8-90ae-4fe4-8837-20d4ecbf1ee7"
+		},
+		"AzureDataLakeStore_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataLakeStore_properties_typeProperties_subscriptionId": {
+			"value": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"AzureDataLakeStore_properties_typeProperties_resourceGroupName": {
+			"value": "storage"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://adlsgen2ttest.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_servicePrincipalId": {
+			"value": "2a2c8e8f-ba3f-489e-8d17-764883c62806"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+			"value": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+			"value": "adf"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://thhusseikeyvault.vault.azure.net/"
+		},
+		"ODataBusinessCentral_properties_typeProperties_url": {
+			"value": "https://api.businesscentral.dynamics.com/v2.0/c1e6e092-68e7-4999-af96-25fa2a0207b7/Production/ODataV4/"
+		},
+		"ODataBusinessCentral_properties_typeProperties_userName": {
+			"value": "ADMIN"
+		},
+		"linkedService1_properties_typeProperties_hostSubscriptionId": {
+			"value": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"linkedService1_properties_typeProperties_clusterResourceGroup": {
+			"value": "adf"
+		},
+		"linkedService1_properties_typeProperties_servicePrincipalId": {
+			"value": "429272a2-5996-4c69-b644-588fc4aa8219"
+		},
+		"linkedService1_properties_typeProperties_tenant": {
+			"value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		}
+	}
+}

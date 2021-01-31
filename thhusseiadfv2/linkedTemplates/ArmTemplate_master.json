@@ -1,0 +1,210 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "thhusseiadfv2"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStore_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureDataLakeStore'"
+		},
+		"AzureDataLakeStore1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'AzureDataLakeStore1'"
+		},
+		"ODataBusinessCentral_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ODataBusinessCentral'"
+		},
+		"linkedService1_clusterPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterPassword' of 'linkedService1'"
+		},
+		"linkedService1_clusterSshPassword": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clusterSshPassword' of 'linkedService1'"
+		},
+		"linkedService1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'linkedService1'"
+		},
+		"AzureDataLakeStore_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://thhusseiadlsgen1.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "d5d0bae8-90ae-4fe4-8837-20d4ecbf1ee7"
+		},
+		"AzureDataLakeStore_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataLakeStore_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"AzureDataLakeStore_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "storage"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://adlsgen2ttest.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "2a2c8e8f-ba3f-489e-8d17-764883c62806"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "adf"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://thhusseikeyvault.vault.azure.net/"
+		},
+		"ODataBusinessCentral_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.businesscentral.dynamics.com/v2.0/c1e6e092-68e7-4999-af96-25fa2a0207b7/Production/ODataV4/"
+		},
+		"ODataBusinessCentral_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ADMIN"
+		},
+		"linkedService1_properties_typeProperties_hostSubscriptionId": {
+			"type": "string",
+			"defaultValue": "edd4d666-11d7-4336-9b39-9c13da40f3c6"
+		},
+		"linkedService1_properties_typeProperties_clusterResourceGroup": {
+			"type": "string",
+			"defaultValue": "adf"
+		},
+		"linkedService1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "429272a2-5996-4c69-b644-588fc4aa8219"
+		},
+		"linkedService1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "thhusseiadfv2_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStore_servicePrincipalKey": {
+						"value": "[parameters('AzureDataLakeStore_servicePrincipalKey')]"
+					},
+					"AzureDataLakeStore1_servicePrincipalKey": {
+						"value": "[parameters('AzureDataLakeStore1_servicePrincipalKey')]"
+					},
+					"ODataBusinessCentral_password": {
+						"value": "[parameters('ODataBusinessCentral_password')]"
+					},
+					"linkedService1_clusterPassword": {
+						"value": "[parameters('linkedService1_clusterPassword')]"
+					},
+					"linkedService1_clusterSshPassword": {
+						"value": "[parameters('linkedService1_clusterSshPassword')]"
+					},
+					"linkedService1_servicePrincipalKey": {
+						"value": "[parameters('linkedService1_servicePrincipalKey')]"
+					},
+					"AzureDataLakeStore_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('AzureDataLakeStore_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"AzureDataLakeStore_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStore_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStore_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStore_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStore_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('AzureDataLakeStore_properties_typeProperties_subscriptionId')]"
+					},
+					"AzureDataLakeStore_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('AzureDataLakeStore_properties_typeProperties_resourceGroupName')]"
+					},
+					"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"AzureDataLakeStore1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStore1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStore1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStore1_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('AzureDataLakeStore1_properties_typeProperties_subscriptionId')]"
+					},
+					"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('AzureDataLakeStore1_properties_typeProperties_resourceGroupName')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"ODataBusinessCentral_properties_typeProperties_url": {
+						"value": "[parameters('ODataBusinessCentral_properties_typeProperties_url')]"
+					},
+					"ODataBusinessCentral_properties_typeProperties_userName": {
+						"value": "[parameters('ODataBusinessCentral_properties_typeProperties_userName')]"
+					},
+					"linkedService1_properties_typeProperties_hostSubscriptionId": {
+						"value": "[parameters('linkedService1_properties_typeProperties_hostSubscriptionId')]"
+					},
+					"linkedService1_properties_typeProperties_clusterResourceGroup": {
+						"value": "[parameters('linkedService1_properties_typeProperties_clusterResourceGroup')]"
+					},
+					"linkedService1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('linkedService1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"linkedService1_properties_typeProperties_tenant": {
+						"value": "[parameters('linkedService1_properties_typeProperties_tenant')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
